@@ -86,8 +86,12 @@ def ejecutar_todas_canciones_artista(canciones: list) -> None:
     artista = input(
         "Por favor ingrese el nombre del artista que desea buscar: ")
 
-    # TODO: complete el código haciendo el llamado a la función del módulo que
-    # implementa este requrimiento e imprimiendo por pantalla el resultado
+    canciones_encontradas = bb.get_songs_by_artist(canciones, artista)
+
+    if (len(canciones_encontradas) > 0):
+        print("Canciones encontradas: \n", canciones_encontradas)
+    else:
+        print("No se encontro ninguna canción")
 
 
 def ejecutar_todos_artistas_cancion(canciones: list) -> None:

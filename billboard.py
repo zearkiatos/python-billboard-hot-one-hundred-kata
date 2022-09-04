@@ -55,3 +55,17 @@ def get_songs_by_artist_and_years_range(songs: list, artist: str, grant_year: in
             song_list.append(song_found)
 
     return song_list
+
+
+def get_songs_by_artist(songs: list, artist: str) -> list:
+    song_list = []
+    for song in songs:
+        if(song["nombre_artista"].upper() == artist.upper()):
+            song_found = {}
+            song_found['posicion'] = song['posicion']
+            song_found['nombre_cancion'] = song['nombre_cancion']
+            song_found['nombre_artista'] = song['nombre_artista']
+            song_found['anio'] = song['anio']
+            song_list.append(song_found)
+
+    return song_list
