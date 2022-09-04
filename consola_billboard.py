@@ -72,8 +72,12 @@ def ejecutar_canciones_artista_periodo(canciones: list) -> None:
         input("Por favor ingrese el año inicial que desea buscar: "))
     anio_fin = int(input("Por favor ingrese el año final que desea buscar: "))
 
-    # TODO: complete el código haciendo el llamado a la función del módulo que
-    # implementa este requrimiento e imprimiendo por pantalla el resultado
+    canciones_encontradas = bb.get_songs_by_artist_and_years_range(canciones, artista, anio_inic, anio_fin)
+
+    if (len(canciones_encontradas) > 0):
+        print("Canciones encontradas: \n", canciones_encontradas)
+    else:
+        print("No se encontro ninguna canción")
 
 
 def ejecutar_todas_canciones_artista(canciones: list) -> None:

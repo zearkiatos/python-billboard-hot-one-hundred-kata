@@ -30,7 +30,6 @@ def get_song_by_name_and_year(songs: list, name: str, year: int) -> dict:
 
 
 def get_songs_by_year(songs: list, year: int) -> list:
-    songs_found = None
     song_list = []
     for song in songs:
         if(song["anio"] == year):
@@ -40,7 +39,19 @@ def get_songs_by_year(songs: list, year: int) -> list:
             song_found['nombre_artista'] = song['nombre_artista']
             song_found['anio'] = song['anio']
             song_list.append(song_found)
-    if (len(song_list) > 0):
-        songs_found = song_list
 
-    return songs_found
+    return song_list
+
+
+def get_songs_by_artist_and_years_range(songs: list, artist: str, grant_year: int, less_year: int) -> list:
+    song_list = []
+    for song in songs:
+        if(song["nombre_artista"].upper() == artist.upper() and (song["anio"] >= grant_year and song["anio"] <= less_year)):
+            song_found = {}
+            song_found['posicion'] = song['posicion']
+            song_found['nombre_cancion'] = song['nombre_cancion']
+            song_found['nombre_artista'] = song['nombre_artista']
+            song_found['anio'] = song['anio']
+            song_list.append(song_found)
+
+    return song_list
