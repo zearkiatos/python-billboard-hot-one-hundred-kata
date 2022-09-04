@@ -1,4 +1,4 @@
-def cargar_canciones(filePath:str)->list:
+def cargar_canciones(filePath: str) -> list:
     data_dictionary = []
     file = open(filePath)
     file.readline().split(",")
@@ -17,3 +17,13 @@ def cargar_canciones(filePath:str)->list:
     file.close()
 
     return data_dictionary
+
+
+def get_cancion_by_name_and_year(songs: list, name: str, year: int) -> dict:
+    song_found = None
+    for song in songs:
+        if(song["nombre_cancion"].upper() == name.upper() and song["anio"] == year):
+            song_found = song
+            break
+
+    return song_found

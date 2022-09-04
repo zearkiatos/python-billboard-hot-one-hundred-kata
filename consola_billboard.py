@@ -37,8 +37,12 @@ def ejecutar_buscar_cancion(canciones:list)->None:
     cancion = input("Por favor ingrese el nombre de la canción que desea buscar: ")
     anio = int(input("Por favor ingrese el año de la canción que desea buscar: "))
     
-    #TODO: complete el código haciendo el llamado a la función del módulo que
-    #implementa este requrimiento e imprimiendo por pantalla el resultado
+    cancion_encontrada = bb.get_cancion_by_name_and_year(canciones, cancion, anio)
+
+    if (cancion_encontrada):
+        print("Canción encontrada: \n", cancion_encontrada)
+    else:
+        print("Canción no encontrada")
 
 def ejecutar_canciones_anio(canciones:list)->None:
     """ Ejecuta la opción de consultar las canciones de un año dado 
