@@ -19,7 +19,7 @@ def cargar_canciones(filePath: str) -> list:
     return data_dictionary
 
 
-def get_cancion_by_name_and_year(songs: list, name: str, year: int) -> dict:
+def get_song_by_name_and_year(songs: list, name: str, year: int) -> dict:
     song_found = None
     for song in songs:
         if(song["nombre_cancion"].upper() == name.upper() and song["anio"] == year):
@@ -27,3 +27,20 @@ def get_cancion_by_name_and_year(songs: list, name: str, year: int) -> dict:
             break
 
     return song_found
+
+
+def get_songs_by_year(songs: list, year: int) -> list:
+    songs_found = None
+    song_list = []
+    for song in songs:
+        if(song["anio"] == year):
+            song_found = {}
+            song_found['posicion'] = song['posicion']
+            song_found['nombre_cancion'] = song['nombre_cancion']
+            song_found['nombre_artista'] = song['nombre_artista']
+            song_found['anio'] = song['anio']
+            song_list.append(song_found)
+    if (len(song_list) > 0):
+        songs_found = song_list
+
+    return songs_found
