@@ -70,10 +70,30 @@ def get_songs_by_artist(songs: list, artist: str) -> list:
 
     return song_list
 
-def get_artists_by_song(songs:list, search_song:str)->list:
+
+def get_artists_by_song(songs: list, search_song: str) -> list:
     artist_list = []
     for song in songs:
         if(song["nombre_cancion"].upper() == search_song.upper()):
             artist_list.append(song["nombre_artista"])
 
     return artist_list
+
+
+def get_quantity_songs(songs: list, minimal_songs: int) -> list:
+    songs_by_artists = {}
+    list_artists = []
+    for song in songs:
+        songs_by_artists[song['nombre_artista']] = 0
+    for song in songs:
+        songs_by_artists[song['nombre_artista']
+                         ] += 1
+    for artist in songs_by_artists:
+        if (songs_by_artists[artist] >= minimal_songs ):
+            list_artists.append(artist)
+    
+    return list_artists
+
+
+    
+    
