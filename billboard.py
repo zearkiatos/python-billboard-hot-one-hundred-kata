@@ -69,3 +69,11 @@ def get_songs_by_artist(songs: list, artist: str) -> list:
             song_list.append(song_found)
 
     return song_list
+
+def get_artists_by_song(songs:list, search_song:str)->list:
+    artist_list = []
+    for song in songs:
+        if(song["nombre_cancion"].upper() == search_song.upper()):
+            artist_list.append(song["nombre_artista"])
+
+    return artist_list

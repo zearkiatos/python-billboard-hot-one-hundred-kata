@@ -98,11 +98,14 @@ def ejecutar_todos_artistas_cancion(canciones: list) -> None:
     """ Ejecuta la opción de consultar todos los artistas que han interpretado 
     una canción dada 
     """
-    min = input("Por favor ingrese el nombre de la canción que desea buscar: ")
+    cancion = input("Por favor ingrese el nombre de la canción que desea buscar: ")
 
-    # TODO: complete el código haciendo el llamado a la función del módulo que
-    # implementa este requrimiento e imprimiendo por pantalla el resultado
+    artists = bb.get_artists_by_song(canciones,cancion)
 
+    if (len(artists) > 0):
+        print("Artistas de la canción buscada: \n", artists)
+    else:
+        print("No se encontro ninguna canción")
 
 def ejecutar_artistas_mas_populares(canciones: list) -> None:
     """ Ejecuta la opción de consultar los artistas más populares 
