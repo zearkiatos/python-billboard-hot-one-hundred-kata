@@ -72,7 +72,8 @@ def ejecutar_canciones_artista_periodo(canciones: list) -> None:
         input("Por favor ingrese el año inicial que desea buscar: "))
     anio_fin = int(input("Por favor ingrese el año final que desea buscar: "))
 
-    canciones_encontradas = bb.get_songs_by_artist_and_years_range(canciones, artista, anio_inic, anio_fin)
+    canciones_encontradas = bb.get_songs_by_artist_and_years_range(
+        canciones, artista, anio_inic, anio_fin)
 
     if (len(canciones_encontradas) > 0):
         print("Canciones encontradas: \n", canciones_encontradas)
@@ -98,23 +99,30 @@ def ejecutar_todos_artistas_cancion(canciones: list) -> None:
     """ Ejecuta la opción de consultar todos los artistas que han interpretado 
     una canción dada 
     """
-    cancion = input("Por favor ingrese el nombre de la canción que desea buscar: ")
+    cancion = input(
+        "Por favor ingrese el nombre de la canción que desea buscar: ")
 
-    artists = bb.get_artists_by_song(canciones,cancion)
+    artists = bb.get_artists_by_song(canciones, cancion)
 
     if (len(artists) > 0):
         print("Artistas de la canción buscada: \n", artists)
     else:
         print("No se encontro ninguna canción")
 
+
 def ejecutar_artistas_mas_populares(canciones: list) -> None:
     """ Ejecuta la opción de consultar los artistas más populares 
     """
-    min = input(
-        "Por favor ingrese la cantidad mínima de canciones que desea buscar: ")
+    min = int(input(
+        "Por favor ingrese la cantidad mínima de canciones que desea buscar: "))
 
-    # TODO: complete el código haciendo el llamado a la función del módulo que
-    # implementa este requrimiento e imprimiendo por pantalla el resultado
+    artists = bb.get_quantity_songs(canciones, min)
+
+    if (len(artists) > 0):
+        print(
+            "Lista de artistas con minimo numero de canciones hasta la fecha: \n", artists)
+    else:
+        print("No se encontro ninguna canción")
 
 
 def ejecutar_artista_estrella(canciones: list) -> None:
