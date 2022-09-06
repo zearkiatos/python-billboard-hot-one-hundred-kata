@@ -147,8 +147,10 @@ def ejecutar_promedio_canciones_por_artista(canciones: list) -> None:
     """ Ejecuta la opción de consultar la cantidad promedio de canciones que los 
     artistas tienen en el listado de Billboard 
     """
-    # TODO: complete el código haciendo el llamado a la función del módulo que
-    # implementa este requrimiento e imprimiendo por pantalla el resultado
+    promedio_canciones_por_artista = bb.get_songs_average_by_artist(canciones)
+
+    print('Promedio de canciones por artistas', promedio_canciones_por_artista)
+
 
 
 def mostrar_menu():

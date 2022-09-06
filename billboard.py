@@ -125,3 +125,14 @@ def get_songs_by_artist(songs: list) -> dict:
                 song['nombre_cancion'])
 
     return songs_by_artist
+
+
+def get_songs_average_by_artist(songs: list) -> float:
+    songs_by_artist = get_songs_by_artist(songs)
+    total_artist = len(list(songs_by_artist))
+    total_song = 0
+
+    for artist in songs_by_artist:
+        total_song += len(songs_by_artist[artist])
+
+    return total_song/total_artist
