@@ -94,6 +94,24 @@ def get_quantity_songs(songs: list, minimal_songs: int) -> list:
     
     return list_artists
 
+def get_must_popular_artist(songs:list)->dict:
+    songs_by_artists = {}
+    most_popular_artist = {}
+    grant_quantity_songs = 0
+    popular_artist = ''
+    for song in songs:
+        songs_by_artists[song['nombre_artista']] = 0
+    for song in songs:
+        songs_by_artists[song['nombre_artista']
+                         ] += 1
+    for artist in songs_by_artists:
+        if (songs_by_artists[artist] > grant_quantity_songs ):
+            grant_quantity_songs = songs_by_artists[artist]
+            popular_artist = artist
+    
+    most_popular_artist[popular_artist] = grant_quantity_songs
+
+    return most_popular_artist
 
     
     

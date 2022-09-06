@@ -128,8 +128,9 @@ def ejecutar_artistas_mas_populares(canciones: list) -> None:
 def ejecutar_artista_estrella(canciones: list) -> None:
     """ Ejecuta la opción de consultar el artista estrella de todos los tiempos 
     """
-    # TODO: complete el código haciendo el llamado a la función del módulo que
-    # implementa este requrimiento e imprimiendo por pantalla el resultado
+    artista_estrella = bb.get_must_popular_artist(canciones)
+
+    print('El artista estrella es: ', artista_estrella)
 
 
 def ejecutar_artistas_y_sus_canciones(canciones: list) -> None:
