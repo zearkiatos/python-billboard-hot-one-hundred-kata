@@ -137,8 +137,10 @@ def ejecutar_artistas_y_sus_canciones(canciones: list) -> None:
     """ Ejecuta la opción de consultar la lista completa de artistas del Billboard 
     junto con sus canciones 
     """
-    # TODO: complete el código haciendo el llamado a la función del módulo que
-    # implementa este requrimiento e imprimiendo por pantalla el resultado
+
+    artistas_y_sus_canciones = bb.get_songs_by_artist(canciones)
+
+    print('Las canciones por artistas son: ', artistas_y_sus_canciones)
 
 
 def ejecutar_promedio_canciones_por_artista(canciones: list) -> None:
